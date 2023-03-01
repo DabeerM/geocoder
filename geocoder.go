@@ -4,7 +4,6 @@ package geocoder
 import (
 	"encoding/json"
 	"errors"
-	"log"
 	"net/http"
 	"strconv"
 	"strings"
@@ -160,7 +159,6 @@ func Geocoding(address Address) (Location, error) {
 	// Send the HTTP request and get the results
 	results, err := httpRequest(url)
 	if err != nil {
-		log.Println(err)
 		return location, err
 	}
 
@@ -240,7 +238,6 @@ func GeocodingReverse(location Location) ([]Address, error) {
 	// Send the HTTP request and get the results
 	results, err := httpRequest(url)
 	if err != nil {
-		log.Println(err)
 		return addresses, err
 	}
 
@@ -259,7 +256,6 @@ func GeocodingReverseIntl(location Location, language string) ([]Address, error)
 	// Send the HTTP request and get the results
 	results, err := httpRequest(url)
 	if err != nil {
-		log.Println(err)
 		return addresses, err
 	}
 
